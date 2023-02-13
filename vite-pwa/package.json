@@ -1,0 +1,147 @@
+{
+  "name": "vite-sandbox",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://github.com/chalz777/VitePWA",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chalz777/VitePWA"
+  },
+  "keywords": [
+    "react",
+    "pwa",
+    "vue",
+    "vitepress",
+    "preact",
+    "svelte",
+    "sveltekit",
+    "workbox",
+    "solidjs",
+    "vite",
+    "vite-plugin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./top-dist/index.d.ts",
+      "require": "./top-dist/index.js",
+      "import": "./top-dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "top-dist/index.js",
+  "module": "top-dist/index.mjs",
+  "types": "index.d.ts",  
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./top-dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "top-dist",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "dev": "cross-env DEBUG=vite-sandbox* NODE_ENV=development SW_DEV=true vite --force",
+    "dev-claims": "cross-env DEBUG=vite-sandbox:* SW_DEV=true CLAIMS=true SW=true vite --force",
+    "dev-destroy": "rimraf dev-dist && cross-env DEBUG=vite-sandbox:* SW_DESTROY=true SW_DEV=true vite --force",
+    "dev-claims-destroy": "rimraf dev-dist && cross-env DEBUG=vite-sandbox:* SW_DESTROY=true SW_DEV=true CLAIMS=true SW=true vite --force",
+    "start-sw-claims": "npm run run-build-sw-claims && npm run serve",
+    "start-sw-claims-reloadsw": "npm run run-build-sw-claims-reloadsw && npm run serve",
+    "build": "cross-env DEBUG=vite-sandbox:* vite build",
+
+    "lint": "eslint .",
+    "lint-fix": "nr lint --fix",
+    "tdev": "esno scripts/dev.ts",
+    "tbuild": "esno scripts/build.ts",
+    "prepublishOnly": "npm run tbuild",
+    "release": "npx bumpp --push --tag --commit && npm publish",
+
+    "run-build": "cross-env DEBUG=vite-sandbox:* BASE_URL=/ SOURCE_MAP=true vite build",
+    "run-build-destroy": "cross-env DEBUG=vite-sandbox:* BASE_URL=/ SOURCE_MAP=true SW_DESTROY=true vite build",
+    "run-build-sw-claims": "cross-env DEBUG=vite-sandbox:* BASE_URL=/ SOURCE_MAP=true NODE_ENV=development CLAIMS=true SW=true vite build",
+    "run-build-sw-claims-reloadsw": "cross-env DEBUG=vite-sandbox:* BASE_URL=/ SOURCE_MAP=true CLAIMS=true RELOAD_SW=true SW=true vite build",
+    "start-destroy": "npm run run-build-destroy && npm run serve",
+    "examples": "esno scripts/run-examples.ts",
+    "preview": "vite preview",
+    "serve": "serve dist",
+    "served": "serve top-dist",
+    "debug": "vite --debug",
+    "tsc": "tsc: build - vite-sandbox/tsconfig.json",
+    "watch": "tsc --watch",
+    "node": "node --inspect-brk \"$(npm bin)/vite\"",
+    "node0": "node --inspect-brk ./src/lib/modules.js"
+  },
+  "peerDependencies": {
+    "vite": "^3.1.0",
+    "workbox-build": "^6.5.4",
+    "workbox-window": "^6.5.4"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@vueuse/core": "^9.2.0",
+    "@vueuse/shared": "^9.2.0",
+    "builtin-modules": "^3.3.0",
+    "crypto-random-string": "^2.0.0",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "file-system": "^2.2.2",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "pretty-bytes": "^6.0.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dynamic-import-variables": "^1.1.0",
+    "rollup-plugin-node-externals": "^5.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "url": "^0.11.0",
+    "vite-plugin-commonjs": "^0.6.1",
+    "vite-plugin-commonjs-externals": "^0.1.1",
+    "vite-plugin-inspect": "^0.7.12",
+    "vite-plugin-pwa": "^0.14.1",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5",
+    "workbox-build": "^6.5.4",
+    "workbox-window": "^6.5.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.26.3",
+    "@antfu/ni": "^0.18.0",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@types/debug": "^4.1.7",
+    "@types/node": "^18.11.18",
+    "@types/prompts": "^2.4.0",
+    "@types/react": "^18.0.18",
+    "@types/workbox-build": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vueuse/core": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.23.0",
+    "esno": "0.16.3",
+    "fast-glob": "^3.2.12",
+    "https-localhost": "^4.7.1",
+    "kolorist": "^1.5.1",
+    "preact": "^10.10.6",
+    "prompts": "^2.4.2",
+    "react": "^18.2.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.0",
+    "solid-js": "^1.5.4",
+    "svelte": "^3.50.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "tsup": "^6.2.3",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vue": "^3.2.38",
+    "vue-tsc": "^1.0.11",
+    "workbox-core": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-window": "^6.5.4"
+  }
+}

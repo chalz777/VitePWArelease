@@ -1,0 +1,16 @@
+export const commands = [
+  'npx tsup src/lib/index.ts --dts --format cjs,esm -d top-dist/',
+  //'npx tsup src/lib/index.ts --dts --format cjs,esm',
+  // 'npx tsup src/lib/client/build/register.ts --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/build/vue.ts --external vue --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/build/svelte.ts --external svelte/store --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/build/react.ts --external react --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/build/preact.ts --external preact/hooks --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/build/solid.ts --external solid-js --format esm -d top-dist/client/build',
+  // 'npx tsup src/lib/client/dev/register.ts --format esm -d top-dist/client/dev',
+  // 'npx tsup src/lib/client/dev/vue.ts --external vue --format esm -d top-dist/client/dev',
+  // 'npx tsup src/lib/client/dev/svelte.ts --external svelte/store --format esm -d top-dist/client/dev',
+  // 'npx tsup src/lib/client/dev/react.ts --external react --format esm -d top-dist/client/dev',
+  // 'npx tsup src/lib/client/dev/preact.ts --external preact/hooks --format esm -d top-dist/client/dev',
+  // 'npx tsup src/lib/client/dev/solid.ts --external solid-js --format esm -d top-dist/client/dev',
+]

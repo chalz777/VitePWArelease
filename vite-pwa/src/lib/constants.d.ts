@@ -1,0 +1,12 @@
+export declare const FILE_SW_REGISTER = "registerSW.js";
+export declare const VIRTUAL_MODULES_MAP: Record<string, string>;
+export declare const VIRTUAL_MODULES_RESOLVE_PREFIX = "/@vite-sandbox/";
+export declare const VIRTUAL_MODULES: string[];
+export declare const defaultInjectManifestVitePlugins: string[];
+export declare const PWA_INFO_VIRTUAL = "virtual:pwa-info";
+export declare const RESOLVED_PWA_INFO_VIRTUAL: string;
+export declare const DEV_SW_NAME = "dev-sw.js?dev-sw";
+export declare const DEV_SW_VIRTUAL: string;
+export declare const RESOLVED_DEV_SW_VIRTUAL: string;
+export declare const DEV_READY_NAME = "vite-pwa-plugin:dev-ready";
+export declare const DEV_REGISTER_SW_NAME = "vite-sandbox:register-sw";

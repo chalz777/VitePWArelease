@@ -1,0 +1,22 @@
+{
+
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es2017",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "lib": ["ESNext", "DOM", "WebWorker"],
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true    
+  },
+  "exclude": [
+    "dist",
+    "node_modules"   
+  ],
+  
+//  "references": [{ "path": "./tsconfig.node.json" }]
+}
