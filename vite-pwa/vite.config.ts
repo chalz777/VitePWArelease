@@ -122,11 +122,7 @@ export default defineConfig({
         },   
         plugins: [
           vue(),
-          VitePWA(pwaOptions),   
-          //vitePluginWrapper(),
-          outputPluginStats(),
-          requestAnalytics(),
-          hotUpdateReport(),       
+          VitePWA(pwaOptions),            
           replace(replaceOptions), 
         ],
        
